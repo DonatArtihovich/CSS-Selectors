@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>CSS Selectors</title>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="header-link">
+            <img src="./img/plate.png" alt="App logo" class="header__logo-icon">
+            <span class="header__logo-text">CSS Selectors</span>
+        </a>
+    </header>
+    <main class="main">
+        <h1 class="main__header">Select the plates</h1>
+        <section class="view-section">
+            <div class="table__wrapper">
+                <div class="table"></div>
+                <div class="table__bottom">
+                    <div class="table__side-view"></div>
+                    <div class="table__table-leg"></div>
+                    <div class="table__table-leg"></div>
+                </div>
+            </div>
+        </section>
+        <section class="code-editor">
+            <div class="code-editor__headers-wrapper">
+                <div class="css-editor__header code-editor__window-header">
+                    <h3 class="css-editor__header-name header-name">CSS Editor</h3>
+                    <h3 class="css-editor__header-filename header-filename">style.css</h3>
+                </div>
+                <div class="html-viewer__header code-editor__window-header">
+                    <h3 class="html-viewer__header-name header-name">HTML Viewer</h3>
+                    <h3 class="html-viewer__header-filename header-filename">index.html</h3>
+                </div>
+            </div>
+            <div class="windows-wrapper">
+                <article class="css-editor">
+                    <div class="css-editor__line-numbering-wrapper line-numbering-wrapper">
+                        <p class="css-editor__line-numbering line-numbering">
+                            1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20
+                        </p>
+                    </div>
+                    <div class="css-editor__enter-area">
+                        <input type="text" class="css-editor__input" placeholder="Write your selector here!">
+                        <button class="css-editor__enter-button">enter</button>
+                    </div>
+                    <article class="html-viewer">
+                        <div class="html-viewer__line-numbering-wrapper line-numbering-wrapper">
+                            <p class="html-viewer__line-numbering line-numbering">
+                                1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20
+                            </p>
+                        </div>
+                        <div class="html-viewer__markup"></div>
+                    </article>
+                </article>
+            </div>
+        </section>
+    </main>
+    <aside class="levels-list">
+        <h3 class="levels-list__header">Level</h3>
+        <ul class="levels__wrapper">
+            <li class="level-item">
+                <img src="./img/tick.svg" alt="" class="level-item__status-image">
+                <h4 class="level-item__header">Level 1</h4>
+            </li>
+            <li class="level-item">
+                <img src="./img/tick.svg" alt="" class="level-item__status-image">
+                <h4 class="level-item__header">Level 2</h4>
+            </li>
+            <li class="level-item">
+                <img src="./img/tick.svg" alt="" class="level-item__status-image">
+                <h4 class="level-item__header">Level 3</h4>
+            </li>
+            <li class="level-item">
+                <img src="./img/tick.svg" alt="" class="level-item__status-image">
+                <h4 class="level-item__header">Level 4</h4>
+            </li>
+            <li class="level-item">
+                <img src="./img/tick.svg" alt="" class="level-item__status-image">
+                <h4 class="level-item__header">Level 5</h4>
+            </li>
+            <li class="level-item">
+                <img src="./img/tick.svg" alt="" class="level-item__status-image">
+                <h4 class="level-item__header">Level 6</h4>
+            </li>
+            <li class="level-item">
+                <img src="./img/tick.svg" alt="" class="level-item__status-image">
+                <h4 class="level-item__header">Level 7</h4>
+            </li>
+            <li class="level-item">
+                <img src="./img/tick.svg" alt="" class="level-item__status-image">
+                <h4 class="level-item__header">Level 8</h4>
+            </li>
+            <li class="level-item">
+                <img src="./img/tick.svg" alt="" class="level-item__status-image">
+                <h4 class="level-item__header">Level 9</h4>
+            </li>
+            <li class="level-item">
+                <img src="./img/tick.svg" alt="" class="level-item__status-image">
+                <h4 class="level-item__header">Level 10</h4>
+            </li>
+        </ul>
+        <button class="reset-button">Reset Progress</button>
+    </aside>
+    <footer class="footer">
+        <a href="https://github.com/DonatArtihovich" target="_blank" class="footer__user-link">GitHub</a>
+        <span class="footer__current-year">2023</span>
+        <a href="https://rs.school/js/" target="_blank">
+            <img class="footer__course-image" src="./img/rs_school_js.svg" alt="RS School">
+        </a>
+    </footer>
+</body>
+
+</html>

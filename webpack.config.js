@@ -4,7 +4,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const EslingPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
-    entry: path.resolve(__dirname, './rs-css/index.ts'),
+    entry: path.resolve(__dirname, './rs-css-selectors/index.ts'),
     mode: 'development',
     output: {
         filename: 'index.js',
@@ -32,7 +32,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, './rs-css/index.html'),
+            template: path.resolve(__dirname, './rs-css-selectors/index.html'),
             filename: 'index.html',
         }),
         // new FaviconsWebpackPlugin({
