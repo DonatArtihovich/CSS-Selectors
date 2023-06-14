@@ -3,7 +3,8 @@
     --secondary-background-color: rgb(27, 24, 19);
     --numbering-color: rgb(207, 209, 205);
     --main-editor-background-color: #FFFFFF;
-    --secondary-editor-background-color: gray;
+    --secondary-editor-background-color: rgba(255, 255, 255, .3);
+    --css-editor-additional-color: rgb(125, 116, 116);
     --main-viewer-background-color: rgb(0, 0, 0, 0.3);
     --editor-text-color: #999;
     --enter-button-hover-color: rgb(155, 155, 155);
@@ -151,6 +152,7 @@ body {
 
 .line-numbering {
     width: 23px;
+    color: var(--secondary-editor-background-color);
     text-align: center;
 }
 
@@ -175,12 +177,12 @@ body {
 }
 
 .css-editor__line-numbering-wrapper {
-    border: 1px solid var(--secondary-editor-background-color);
+    border: 1px solid var(--css-editor-additional-color);
     background-color: var(--numbering-color);
 }
 
 .css-editor__line-numbering {
-    color: var(--secondary-editor-background-color);
+    color: var(--css-editor-additional-color);
 }
 
 .css-editor__enter-area {
@@ -188,6 +190,12 @@ body {
     padding: 16px;
     width: 500px;
     height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.input-area__wrapper {
     display: flex;
     justify-content: space-between;
 }
@@ -204,18 +212,18 @@ body {
     width: 55px;
     height: 25px;
     text-align: center;
-    color: var(--secondary-editor-background-color);
+    color: var(--css-editor-additional-color);
     font-family: Menlo, monospace;
     background-color: var(--numbering-color);
-    border: 1px solid var(--secondary-editor-background-color);
+    border: 1px solid var(--css-editor-additional-color);
     border-radius: 5px;
-    box-shadow: 0 8px var(--secondary-editor-background-color);
+    box-shadow: 0 8px var(--css-editor-additional-color);
 }
 
 .css-editor__enter-button:hover {
     margin-top: 2px;
     cursor: pointer;
-    box-shadow: 0 6px var(--secondary-editor-background-color);
+    box-shadow: 0 6px var(--css-editor-additional-color);
     transition: 0.1s;
 }
 
@@ -223,6 +231,10 @@ body {
     margin-top: 7px;
     background-color: var(--enter-button-hover-color);
     box-shadow: 0 1px var(--secondary-editor-background-color);
+}
+
+.enter-area__text {
+    height: 300px;
 }
 
 .html-viewer {
@@ -252,9 +264,18 @@ body {
 }
 
 .html-viewer__markup {
+    box-sizing: border-box;
+    padding: 16px;
     width: 500px;
     height: 400px;
     border: 1px solid var(--secondary-editor-background-color);
+}
+
+.table-tag,
+.table-tag__open,
+.table-tag__close {
+    margin: 0;
+    cursor: default;
 }
 
 .levels__wrapper {
