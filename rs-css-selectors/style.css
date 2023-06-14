@@ -339,3 +339,41 @@ body {
     font-family: 'Menlo';
     src: url("./fonts/Menlo-Regular.ttf");
 }
+
+@media(max-width: 1300px) {
+    .view-section {
+        width: 77vw;
+    }
+
+    .code-editor {
+        width: 77vw;
+    }
+
+    .code-editor__headers-wrapper {
+        width: 77vw;
+    }
+
+    .code-editor__window-header {
+        width: 38.3vw;
+    }
+
+    .line-numbering-wrapper {
+        width: 2.1vw;
+    }
+
+    .line-numbering {
+        width: 1.64vw;
+    }
+
+    .css-editor__enter-area {
+        width: 36vw;
+    }
+
+    .css-editor__input {
+        width: 25vw;
+    }
+
+    .html-viewer__markup {
+        width: 36vw;
+    }
+}
