@@ -27,6 +27,7 @@ body {
 }
 
 .header {
+    margin: 16px 16px 0;
     width: 160px;
     grid-area: header;
 }
