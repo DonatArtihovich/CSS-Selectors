@@ -35,9 +35,9 @@ module.exports = {
             template: path.resolve(__dirname, './rs-css-selectors/index.html'),
             filename: 'index.html',
         }),
-        // new FaviconsWebpackPlugin({
-        //     logo: './migration-to-ts/src/img/icon.png',
-        // }),
+        new FaviconsWebpackPlugin({
+            logo: './rs-css-selectors/img/plate.png',
+        }),
         new EslingPlugin({ extensions: 'ts' })
     ],
 };
