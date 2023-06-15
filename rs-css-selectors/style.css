@@ -323,6 +323,7 @@ body {
     grid-area: aside;
     display: flex;
     flex-direction: column;
+    overflow: scroll;
 }
 
 .levels-list__header {
@@ -382,8 +383,6 @@ body {
 .footer__user-link:hover {
     color: var(--main-editor-background-color);
 }
-
-.footer__current-year {}
 
 .footer__course-image {
     width: 50px;
