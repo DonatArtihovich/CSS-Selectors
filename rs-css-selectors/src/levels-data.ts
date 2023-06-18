@@ -25,6 +25,7 @@ export const levelDataArr: ILevel[] = [
       { title: '  <plate />', highlight: ['plate2'], id: 'title-plate2' },
       { title: '  <plate />', highlight: ['plate3'], id: 'title-plate3' }
     ],
+    activeItems: ['plate1', 'plate2', 'plate3'],
     header: 'Select plates!'
   }
 ]

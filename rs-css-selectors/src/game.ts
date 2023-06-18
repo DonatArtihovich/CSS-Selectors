@@ -74,16 +74,27 @@ export function writeSolution (): void {
   }, 200)
 }
 
+export function changeLevelIndex (index: number): void {
+  currentLevelIndex = index
+}
+
 function winLevel (): void {
-  alert('YES')
+  const activeItems: NodeListOf<HTMLDivElement> = document.querySelectorAll('.level-item_active')
+  activeItems.forEach(item => { item.classList.add('level-item_active-win') })
   currentLevelIndex += 1
   levelsArr.length > currentLevelIndex ? startLevel() : finishGame()
 }
 
 function shakeLevel (): void {
-  alert('NO')
+  const activeItems: NodeListOf<HTMLDivElement> = document.querySelectorAll('.level-item_active')
+  activeItems.forEach(item => {
+    item.classList.add('level-item_active-lose')
+    item.addEventListener('animationend', () => {
+      item.classList.remove('level-item_active-lose')
+    }, { once: true })
+  })
 }
 
 function finishGame (): void {
-  alert('YOU WON')
+  // alert('YOU WON')
 }

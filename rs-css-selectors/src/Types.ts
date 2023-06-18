@@ -2,7 +2,7 @@ export interface ILevel {
   correctAnswer: string
   items: IItemObject[]
   viewerTitles: ITitleObject[]
-  viewerChildTitle?: string[]
+  activeItems: string[]
   itemElements?: HTMLElement[]
   header: string
 }

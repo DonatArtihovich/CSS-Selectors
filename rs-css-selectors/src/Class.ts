@@ -4,22 +4,22 @@ export class Level implements ILevel {
   public correctAnswer: string
   public items: IItemObject[]
   public viewerTitles: ITitleObject[]
-  public viewerChildTitle?: string[]
+  public activeItems: string[]
   public itemElements: HTMLElement[]
-  public childItemElements: HTMLElement[]
   public header: string
   constructor ({
     correctAnswer,
     items,
     viewerTitles,
+    activeItems,
     header
   }: ILevel) {
     this.correctAnswer = correctAnswer
     this.items = items
     this.viewerTitles = viewerTitles
+    this.activeItems = activeItems
     this.header = header
     this.itemElements = []
-    this.childItemElements = []
     this.createItemElements()
   }
 
@@ -32,6 +32,7 @@ export class Level implements ILevel {
       itemElement.id = item.id
       itemElement.dataset.highlight = JSON.stringify(item.highlight)
       itemWrapper.className = `level-item__picture-wrapper level-item__${item.type}-wrapper`
+      if (this.activeItems.includes(item.id)) itemWrapper.classList.add('level-item_active')
       itemWrapper.append(itemElement)
 
       this.itemElements.push(itemWrapper)
