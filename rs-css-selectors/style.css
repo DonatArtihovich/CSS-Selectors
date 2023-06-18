@@ -83,13 +83,13 @@ body {
     height: 340px;
     border-radius: 15px;
     background-color: var(--secondary-background-color);
+    position: relative;
 }
 
 
 .table__wrapper {
     margin: 100px auto 0;
     width: 700px;
-    /* border: 1px solid white; */
     position: relative;
 }
 
@@ -156,7 +156,6 @@ body {
     padding: 10px;
     width: 532px;
     height: 30px;
-    /* border: 1px solid var(--secondary-editor-background-color); */
     box-sizing: border-box;
     background-color: var(--main-background-color);
     display: flex;
@@ -320,9 +319,14 @@ body {
 
 .table-tag,
 .table-tag__open,
+.table-tag__content,
 .table-tag__close {
     margin: 0;
     cursor: default;
+}
+
+.table-tag {
+    position: relative;
 }
 
 .levels__wrapper {
