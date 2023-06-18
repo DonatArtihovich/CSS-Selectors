@@ -36,7 +36,7 @@ module.exports = {
             filename: 'index.html',
         }),
         new FaviconsWebpackPlugin({
-            logo: './rs-css-selectors/img/plate.png',
+            logo: './rs-css-selectors/assets/img/plate.png',
         }),
         new EslingPlugin({ extensions: 'ts' })
     ],

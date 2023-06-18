@@ -241,7 +241,7 @@ body {
     border: none;
 }
 
-.css-editor__enter-button {
+.app__button {
     width: 55px;
     height: 25px;
     text-align: center;
@@ -253,17 +253,30 @@ body {
     box-shadow: 0 8px var(--css-editor-additional-color);
 }
 
-.css-editor__enter-button:hover {
+.app__button:hover {
     margin-top: 2px;
     cursor: pointer;
     box-shadow: 0 6px var(--css-editor-additional-color);
     transition: 0.1s;
 }
 
-.css-editor__enter-button:active {
+.app__button:active {
     margin-top: 7px;
     background-color: var(--enter-button-hover-color);
     box-shadow: 0 1px var(--secondary-editor-background-color);
+}
+
+.help-button {
+    margin: 15px 0;
+    align-self: center;
+}
+
+.help-button:hover {
+    margin: 17px 0 13px;
+}
+
+.help-button:active {
+    margin: 22px 0 8px;
 }
 
 .enter-area__text {
@@ -323,7 +336,6 @@ body {
     grid-area: aside;
     display: flex;
     flex-direction: column;
-    overflow: scroll;
 }
 
 .levels-list__header {
@@ -391,7 +403,7 @@ body {
 
 @font-face {
     font-family: 'Menlo';
-    src: url("./fonts/Menlo-Regular.ttf");
+    src: url("./assets/fonts/Menlo-Regular.ttf");
 }
 
 @media(max-width: 1300px) {
@@ -472,6 +484,7 @@ body {
         bottom: 0;
         z-index: 150;
         transition: right 0.3s;
+        overflow-y: scroll;
     }
 
     .levels-list_active {
