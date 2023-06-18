@@ -55,14 +55,15 @@ export function checkAnswer (answer: string): void {
 }
 
 function winLevel (): void {
+  alert('YES')
   currentLevelIndex += 1
   levelsArr.length > currentLevelIndex ? startLevel() : finishGame()
 }
 
 function shakeLevel (): void {
-
+  alert('NO')
 }
 
 function finishGame (): void {
-
+  alert('YOU WON')
 }

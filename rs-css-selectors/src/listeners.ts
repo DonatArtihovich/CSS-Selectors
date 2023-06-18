@@ -35,7 +35,7 @@ function addHighlightListeners (nodesArr: NodeListOf<HTMLElement>): void {
 }
 
 function addEnterButtonListener (): void {
-  const enterButton: HTMLButtonElement | null = document.querySelector('css-editor__enter-button')
+  const enterButton: HTMLButtonElement | null = document.querySelector('.css-editor__enter-button')
   if (enterButton === null) throw new Error('Unexpected null instead of enter button!')
   const enterInput: HTMLInputElement | null = document.querySelector('.css-editor__input')
   if (enterInput === null) throw new Error('Unexpected null instead of input!')
