@@ -5,7 +5,7 @@ export function addListeners (): void {
   const itemsArr: NodeListOf<HTMLImageElement> | null = document.querySelectorAll('.level-item__picture')
   addHighlightListeners(titlesArr)
   addHighlightListeners(itemsArr)
-  addEnterButtonListener()
+  addCheckAnswerListener()
 }
 
 function addHighlightListeners (nodesArr: NodeListOf<HTMLElement>): void {
@@ -34,13 +34,17 @@ function addHighlightListeners (nodesArr: NodeListOf<HTMLElement>): void {
   })
 }
 
-function addEnterButtonListener (): void {
+function addCheckAnswerListener (): void {
   const enterButton: HTMLButtonElement | null = document.querySelector('.css-editor__enter-button')
   if (enterButton === null) throw new Error('Unexpected null instead of enter button!')
   const enterInput: HTMLInputElement | null = document.querySelector('.css-editor__input')
   if (enterInput === null) throw new Error('Unexpected null instead of input!')
 
   enterButton.addEventListener('click', () => {
+    checkAnswer(enterInput.value)
+  })
+  enterInput.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key !== 'Enter') return
     checkAnswer(enterInput.value)
   })
 }

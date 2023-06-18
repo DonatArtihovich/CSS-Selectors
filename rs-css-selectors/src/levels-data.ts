@@ -6,7 +6,7 @@ export const levelDataArr: ILevel[] = [
     correctAnswer: 'plate',
     items: [{
       type: 'plate',
-      highlight: ['title-plate1-open', 'title-plate1-close'],
+      highlight: ['title-plate1'],
       id: 'plate1'
     },
     {
@@ -21,10 +21,9 @@ export const levelDataArr: ILevel[] = [
     }
     ],
     viewerTitles: [
-      { title: '  <plate>', highlight: ['plate1', 'title-plate1-close'], id: 'title-plate1-open' },
-      { title: '    <plate></plate>', highlight: ['plate2'], id: 'title-plate2' },
-      { title: '  </plate>', highlight: ['plate1', 'title-plate1-open'], id: 'title-plate1-close' },
-      { title: '  <plate />', highlight: ['plate3', 'title-plate3'], id: 'title-plate3' }
+      { title: '  <plate />', highlight: ['plate1'], id: 'title-plate1' },
+      { title: '  <plate />', highlight: ['plate2'], id: 'title-plate2' },
+      { title: '  <plate />', highlight: ['plate3'], id: 'title-plate3' }
     ],
     header: 'Select plates!'
   }
