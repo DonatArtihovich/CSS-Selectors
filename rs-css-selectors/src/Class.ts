@@ -5,7 +5,6 @@ export class Level implements ILevel {
   public items: IItemObject[]
   public viewerTitles: ITitleObject[]
   public viewerChildTitle?: string[]
-  public itemTitles: string[]
   public itemElements: HTMLElement[]
   public childItemElements: HTMLElement[]
   public header: string
@@ -13,13 +12,11 @@ export class Level implements ILevel {
     correctAnswer,
     items,
     viewerTitles,
-    itemTitles,
     header
   }: ILevel) {
     this.correctAnswer = correctAnswer
     this.items = items
     this.viewerTitles = viewerTitles
-    this.itemTitles = itemTitles
     this.header = header
     this.itemElements = []
     this.childItemElements = []
@@ -29,22 +26,15 @@ export class Level implements ILevel {
   private createItemElements (): void {
     this.items.forEach((item: IItemObject) => {
       const itemElement: HTMLElement = document.createElement('img')
+      const itemWrapper: HTMLDivElement = document.createElement('div')
       itemElement.className = `level-item__picture ${item.type}-picture`
       itemElement.setAttribute('src', `./assets/img/${item.type}.png`)
       itemElement.id = item.id
       itemElement.dataset.highlight = JSON.stringify(item.highlight)
+      itemWrapper.className = `level-item__picture-wrapper level-item__${item.type}-wrapper`
+      itemWrapper.append(itemElement)
 
-      this.itemElements.push(itemElement)
+      this.itemElements.push(itemWrapper)
     })
-
-    // if (this.childItems != null) {
-    //   this.childItems.forEach(item => {
-    //     const itemElement: HTMLElement = document.createElement('img')
-    //     itemElement.className = `level-item__picture ${item}-picture`
-    //     itemElement.setAttribute('src', `./assets/img/${item}.png`)
-
-    //     this.childItemElements.push(itemElement)
-    //   })
-    // }
   }
 }

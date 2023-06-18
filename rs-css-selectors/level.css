@@ -24,6 +24,32 @@
     box-shadow: 0 0 15px 15px white;
 }
 
+.level-item__picture-wrapper {
+    position: relative;
+}
+
+.level-item__picture-wrapper::before {
+    position: absolute;
+    content: "";
+    background-color: white;
+    border-bottom: 2px solid gray;
+    color: rgb(102, 102, 102);
+    padding: 5px;
+    top: -12px;
+    left: 50%;
+    width: 150px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.level-item__picture-wrapper:hover::before {
+    opacity: 1;
+}
+
+.level-item__plate-wrapper::before {
+    content: '<plate></plate>'
+}
+
 .plate-picture {
     border-radius: 50px;
 }
@@ -31,6 +57,11 @@
 .table-tag__content:hover,
 .table-tag__content.highlighted {
     color: white;
+}
+
+@font-face {
+    font-family: 'Menlo';
+    src: url("./assets/fonts/Menlo-Regular.ttf");
 }
 
 /* 

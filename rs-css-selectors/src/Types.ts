@@ -3,7 +3,6 @@ export interface ILevel {
   items: IItemObject[]
   viewerTitles: ITitleObject[]
   viewerChildTitle?: string[]
-  itemTitles: string[]
   itemElements?: HTMLElement[]
   header: string
 }
