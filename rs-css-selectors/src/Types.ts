@@ -12,6 +12,7 @@ export type Item = 'plate' | 'apple' | 'cherry' | 'pineapple'
 
 export interface IItemObject {
   type: string
+  highlight: string[]
   id: string
 }
 

@@ -32,6 +32,7 @@ export class Level implements ILevel {
       itemElement.className = `level-item__picture ${item.type}-picture`
       itemElement.setAttribute('src', `./assets/img/${item.type}.png`)
       itemElement.id = item.id
+      itemElement.dataset.highlight = JSON.stringify(item.highlight)
 
       this.itemElements.push(itemElement)
     })

@@ -1,9 +1,9 @@
 import { createLevelsArr } from './levels-data'
-import { startGame } from './game'
+import { startLevel } from './game'
 import { addListeners } from './listeners'
 
 export default function initGame (): void {
   createLevelsArr()
-  startGame()
+  startLevel()
   addListeners()
 }
