@@ -1,4 +1,4 @@
-import { checkAnswer } from './game'
+import { checkAnswer, writeSolution } from './game'
 
 export function addListeners (): void {
   const titlesArr: NodeListOf<HTMLPreElement> | null = document.querySelectorAll('.table-tag__content_parent')
@@ -6,6 +6,7 @@ export function addListeners (): void {
   addHighlightListeners(titlesArr)
   addHighlightListeners(itemsArr)
   addCheckAnswerListener()
+  addHelperListener()
 }
 
 function addHighlightListeners (nodesArr: NodeListOf<HTMLElement>): void {
@@ -47,4 +48,11 @@ function addCheckAnswerListener (): void {
     if (e.key !== 'Enter') return
     checkAnswer(enterInput.value)
   })
+}
+
+function addHelperListener (): void {
+  const helpButton: HTMLButtonElement | null = document.querySelector('.help-button')
+  if (helpButton === null) throw new Error('Unexpected null instead of Help button!')
+
+  helpButton.addEventListener('click', writeSolution)
 }

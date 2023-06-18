@@ -2,8 +2,12 @@ import { levelsArr } from './levels-data'
 import { type ITitleObject, type ILevel } from './Types'
 
 export let currentLevelIndex: number = 0
+let writerId: NodeJS.Timeout
 
 export function startLevel (): void {
+  const table: HTMLDivElement | null = document.querySelector('.table__wrapper')
+  if (table === null) throw new Error('Unexpected null instead of table container!')
+  table.innerHTML = '<div class="table"></div><div class="table__side-view"></div><div class="table__table-leg table-left-leg"></div><div class="table__table-leg table-right-leg"></div>'
   const currentLevel: ILevel = levelsArr[currentLevelIndex]
   console.log(currentLevel)
   renderLevel(currentLevel)
@@ -52,6 +56,22 @@ export function checkAnswer (answer: string): void {
   } else {
     shakeLevel()
   }
+}
+
+export function writeSolution (): void {
+  if (writerId !== undefined) clearInterval(writerId)
+  const currentLevel: ILevel = levelsArr[currentLevelIndex]
+  const answerLetters: string[] = currentLevel.correctAnswer.split('')
+  const enterInput: HTMLInputElement | null = document.querySelector('.css-editor__input')
+  if (enterInput === null) throw new Error('Unexpected null instead of input!')
+
+  enterInput.value = ''
+  let idx = 0
+  writerId = setInterval(() => {
+    enterInput.value += answerLetters[idx]
+    idx += 1
+    if (idx === answerLetters.length) clearInterval(writerId)
+  }, 200)
 }
 
 function winLevel (): void {
