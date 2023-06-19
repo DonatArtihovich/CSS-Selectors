@@ -20,10 +20,10 @@ export class Level implements ILevel {
     this.activeItems = activeItems
     this.header = header
     this.itemElements = []
-    this.createItemElements()
   }
 
-  private createItemElements (): void {
+  public createItemElements (): void {
+    this.itemElements = []
     this.items.forEach((item: IItemObject) => {
       const itemElement: HTMLElement = document.createElement('img')
       const itemWrapper: HTMLDivElement = document.createElement('div')

@@ -5,9 +5,11 @@ export let currentLevelIndex: number = 0
 let writerId: NodeJS.Timeout
 
 export function startLevel (): void {
-  const table: HTMLDivElement | null = document.querySelector('.table__wrapper')
-  if (table === null) throw new Error('Unexpected null instead of table container!')
-  table.innerHTML = '<div class="table"></div><div class="table__side-view"></div><div class="table__table-leg table-left-leg"></div><div class="table__table-leg table-right-leg"></div>'
+  const enterInput: HTMLInputElement | null = document.querySelector('.css-editor__input')
+  if (enterInput === null) throw new Error('Unexpected null instead of input!')
+  enterInput.value = ''
+  const levelPicturesWrapper: HTMLDivElement | null = document.querySelector('.level-item__pictures-wrapper')
+  if (levelPicturesWrapper !== null) levelPicturesWrapper.remove()
   const currentLevel: ILevel = levelsArr[currentLevelIndex]
   console.log(currentLevel)
   renderLevel(currentLevel)
@@ -20,11 +22,15 @@ function renderLevel (level: ILevel): void {
   if (table == null) throw new Error('Unexpected null instead of view section!')
   const itemsWrapper: HTMLElement = document.createElement('div')
   itemsWrapper.classList.add('level-item__pictures-wrapper')
-  table.append(itemsWrapper)
+  if (level === undefined ||
+    level.createItemElements === undefined) throw new Error('Unexpected undefined!')
+  level.createItemElements()
 
   level.itemElements?.forEach(item => {
     itemsWrapper.append(item)
   })
+  console.log(itemsWrapper)
+  table.append(itemsWrapper)
 }
 
 function changeHeader (level: ILevel): void {
@@ -76,9 +82,11 @@ export function writeSolution (): void {
 
 export function changeLevelIndex (index: number): void {
   currentLevelIndex = index
+  console.log(currentLevelIndex)
 }
 
 function winLevel (): void {
+  console.log('WinLivel')
   const activeItems: NodeListOf<HTMLDivElement> = document.querySelectorAll('.level-item_active')
   activeItems.forEach(item => { item.classList.add('level-item_active-win') })
   currentLevelIndex += 1

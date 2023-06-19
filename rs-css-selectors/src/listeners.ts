@@ -1,16 +1,16 @@
 import { checkAnswer, writeSolution, changeLevelIndex, startLevel } from './game'
 
-export function addListeners(): void {
+export function addListeners (): void {
   const titlesArr: NodeListOf<HTMLPreElement> | null = document.querySelectorAll('.table-tag__content_parent')
   const itemsArr: NodeListOf<HTMLImageElement> | null = document.querySelectorAll('.level-item__picture')
   addHighlightListeners(titlesArr)
   addHighlightListeners(itemsArr)
   addCheckAnswerListener()
   addHelperListener()
-  // addLevelsMenuListeners()
+  addLevelsMenuListeners()
 }
 
-function addHighlightListeners(nodesArr: NodeListOf<HTMLElement>): void {
+function addHighlightListeners (nodesArr: NodeListOf<HTMLElement>): void {
   nodesArr.forEach((elem: HTMLElement) => {
     elem.addEventListener('mouseover', () => {
       if (elem.dataset.highlight === undefined) throw new Error('Unexpected undefined')
@@ -36,7 +36,7 @@ function addHighlightListeners(nodesArr: NodeListOf<HTMLElement>): void {
   })
 }
 
-function addCheckAnswerListener(): void {
+function addCheckAnswerListener (): void {
   const enterButton: HTMLButtonElement | null = document.querySelector('.css-editor__enter-button')
   if (enterButton === null) throw new Error('Unexpected null instead of enter button!')
   const enterInput: HTMLInputElement | null = document.querySelector('.css-editor__input')
@@ -51,24 +51,22 @@ function addCheckAnswerListener(): void {
   })
 }
 
-function addHelperListener(): void {
+function addHelperListener (): void {
   const helpButton: HTMLButtonElement | null = document.querySelector('.help-button')
   if (helpButton === null) throw new Error('Unexpected null instead of Help button!')
 
   helpButton.addEventListener('click', writeSolution)
 }
 
-// function addLevelsMenuListeners(): void {
-//   const levelsList: NodeListOf<HTMLLIElement> = document.querySelectorAll('.level-item');
+function addLevelsMenuListeners (): void {
+  const levelsList: NodeListOf<HTMLLIElement> = document.querySelectorAll('.level-item')
 
-//   levelsList.forEach((item: HTMLLIElement) => {
-//     item.addEventListener('click', e => {
-//       const target: HTMLElement = e.currentTarget as HTMLElement
-//       if (!target.classList.contains('.level-item')) return
-//       if (target.dataset.level === undefined) throw new Error('Unexpected undefined!')
-//       changeLevelIndex(+target.dataset.level)
-//       startLevel()
-//       console.log('dd')
-//     })
-//   })
-// }
+  levelsList.forEach((item: HTMLLIElement) => {
+    item.addEventListener('click', e => {
+      const target: HTMLElement = e.currentTarget as HTMLElement
+      if (target.dataset.level === undefined) throw new Error('Unexpected undefined!')
+      changeLevelIndex(+target.dataset.level - 1)
+      startLevel()
+    })
+  })
+}

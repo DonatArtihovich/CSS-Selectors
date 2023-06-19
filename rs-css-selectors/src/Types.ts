@@ -5,6 +5,7 @@ export interface ILevel {
   activeItems: string[]
   itemElements?: HTMLElement[]
   header: string
+  createItemElements?: () => void
 }
 
 export type Item = 'plate' | 'apple' | 'cherry' | 'pineapple'
