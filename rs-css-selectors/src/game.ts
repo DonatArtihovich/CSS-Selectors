@@ -44,6 +44,7 @@ function changeHTMLViewer (level: ILevel): void {
   const viewer: HTMLElement | null = document.querySelector('.table-tag')
   if (viewer == null) throw new Error('Unexpected null instead of HTML Viewer!')
 
+  viewer.innerHTML = '<p class="table-tag__open">&lt;div class="table"&gt;</p>'
   level.viewerTitles.forEach((item: ITitleObject) => {
     const content = document.createElement('pre')
     content.className = 'table-tag__content table-tag__content_parent'
