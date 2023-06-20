@@ -11,10 +11,10 @@ export function startLevel (): void {
   const levelPicturesWrapper: HTMLDivElement | null = document.querySelector('.level-item__pictures-wrapper')
   if (levelPicturesWrapper !== null) levelPicturesWrapper.remove()
   const currentLevel: ILevel = levelsArr[currentLevelIndex]
-  console.log(currentLevel)
+  changeHTMLViewer(currentLevel)
   renderLevel(currentLevel)
   changeHeader(currentLevel)
-  changeHTMLViewer(currentLevel)
+  console.log(currentLevelIndex, levelsArr)
 }
 
 function renderLevel (level: ILevel): void {
@@ -29,8 +29,11 @@ function renderLevel (level: ILevel): void {
   level.itemElements?.forEach(item => {
     itemsWrapper.append(item)
   })
-  console.log(itemsWrapper)
   table.append(itemsWrapper)
+  const titlesArr: NodeListOf<HTMLPreElement> | null = document.querySelectorAll('.table-tag__content_parent')
+  const itemsArr: NodeListOf<HTMLImageElement> | null = document.querySelectorAll('.level-item__picture')
+  addHighlightListeners(titlesArr)
+  addHighlightListeners(itemsArr)
 }
 
 function changeHeader (level: ILevel): void {
@@ -83,7 +86,33 @@ export function writeSolution (): void {
 
 export function changeLevelIndex (index: number): void {
   currentLevelIndex = index
-  console.log(currentLevelIndex)
+}
+
+function addHighlightListeners (nodesArr: NodeListOf<HTMLElement>): void {
+  nodesArr.forEach((elem: HTMLElement) => {
+    elem.addEventListener('mouseover', () => {
+      if (elem.dataset.highlight === undefined) throw new Error('Unexpected undefined')
+      const highlightedElements = JSON.parse(elem.dataset.highlight)
+      console.log(highlightedElements)
+      highlightedElements.forEach((id: string) => {
+        const hElem: HTMLElement | null = document.getElementById(id)
+        if (hElem == null) throw new Error('Unexpected null')
+
+        hElem.classList.add('highlighted')
+      })
+    })
+
+    elem.addEventListener('mouseleave', () => {
+      if (elem.dataset.highlight === undefined) throw new Error('Unexpected undefined')
+      const highlightedElements = JSON.parse(elem.dataset.highlight)
+      highlightedElements.forEach((id: string) => {
+        const hElem: HTMLElement | null = document.getElementById(id)
+        if (hElem == null) throw new Error('Unexpected null')
+
+        hElem.classList.remove('highlighted')
+      })
+    })
+  })
 }
 
 function winLevel (): void {
