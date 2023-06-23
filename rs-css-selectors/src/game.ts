@@ -99,6 +99,7 @@ function addHighlightListeners (nodesArr: NodeListOf<HTMLElement>): void {
         if (hElem == null) throw new Error('Unexpected null')
 
         hElem.classList.add('highlighted')
+        hElem.closest('.level-item__picture-wrapper')?.classList.add('highlighted')
       })
     })
 
@@ -110,6 +111,7 @@ function addHighlightListeners (nodesArr: NodeListOf<HTMLElement>): void {
         if (hElem == null) throw new Error('Unexpected null')
 
         hElem.classList.remove('highlighted')
+        hElem.closest('.level-item__picture-wrapper')?.classList.remove('highlighted')
       })
     })
   })

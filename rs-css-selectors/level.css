@@ -41,7 +41,8 @@
     transition: opacity 0.3s;
 }
 
-.level-item__picture-wrapper:hover::before {
+.level-item__picture-wrapper:hover::before,
+.level-item__picture-wrapper.highlighted::before {
     opacity: 1;
 }
 
