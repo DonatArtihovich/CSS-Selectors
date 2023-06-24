@@ -72,6 +72,10 @@
     width: 250px;
 }
 
+.level-item__orange-wrapper {
+    z-index: 20;
+}
+
 .level-item__orange-wrapper_level-2 {
     position: absolute;
 }

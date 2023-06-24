@@ -59,7 +59,7 @@ function changeHTMLViewer (level: ILevel): void {
 
 export function checkAnswer (answer: string): void {
   const currentLevel: ILevel = levelsArr[currentLevelIndex]
-
+  console.log(currentLevelIndex)
   if (answer === currentLevel.correctAnswer) {
     winLevel()
   } else {
@@ -118,13 +118,13 @@ function addHighlightListeners (nodesArr: NodeListOf<HTMLElement>): void {
 
 function winLevel (): void {
   const activeItems: NodeListOf<HTMLDivElement> = document.querySelectorAll('.level-item_active')
-  activeItems.forEach((item, index) => {
+  activeItems.forEach((item) => {
     item.classList.add('level-item_active-win')
-    setTimeout(() => {
-      currentLevelIndex += 1
-      levelsArr.length > currentLevelIndex ? startLevel() : finishGame()
-    }, 320)
   })
+  setTimeout(() => {
+    currentLevelIndex += 1
+    levelsArr.length > currentLevelIndex ? startLevel() : finishGame()
+  }, 320)
 }
 
 function shakeLevel (): void {
