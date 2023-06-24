@@ -1,6 +1,7 @@
 import { type ILevel, type IItemObject, type ITitleObject } from './Types'
 
 export class Level implements ILevel {
+  public number: number
   public correctAnswer: string
   public items: IItemObject[]
   public viewerTitles: ITitleObject[]
@@ -8,12 +9,14 @@ export class Level implements ILevel {
   public itemElements: HTMLElement[]
   public header: string
   constructor ({
+    number,
     correctAnswer,
     items,
     viewerTitles,
     activeItems,
     header
   }: ILevel) {
+    this.number = number
     this.correctAnswer = correctAnswer
     this.items = items
     this.viewerTitles = viewerTitles
@@ -31,7 +34,7 @@ export class Level implements ILevel {
       itemElement.setAttribute('src', `./assets/img/${item.type}.png`)
       itemElement.id = item.id
       itemElement.dataset.highlight = JSON.stringify(item.highlight)
-      itemWrapper.className = `level-item__picture-wrapper level-item__${item.type}-wrapper`
+      itemWrapper.className = `level-item__picture-wrapper level-item__${item.type}-wrapper level-item__${item.type}-wrapper_level-${this.number}`
       if (this.activeItems.includes(item.id)) itemWrapper.classList.add('level-item_active')
       itemWrapper.append(itemElement)
 

@@ -3,6 +3,7 @@ import { Level } from './Class'
 
 export const levelDataArr: ILevel[] = [
   {
+    number: 1,
     correctAnswer: 'plate',
     items: [{
       type: 'plate',
@@ -27,6 +28,28 @@ export const levelDataArr: ILevel[] = [
     ],
     activeItems: ['plate1', 'plate2', 'plate3'],
     header: 'Select plates!'
+  },
+  {
+    number: 2,
+    correctAnswer: '.orange',
+    items: [{
+      type: 'plate',
+      highlight: ['title-plate-open', 'title-plate-close'],
+      id: 'plate'
+    },
+    {
+      type: 'orange',
+      highlight: ['title-orange'],
+      id: 'orange'
+    }
+    ],
+    viewerTitles: [
+      { title: '  <plate>', highlight: ['plate', 'title-plate-close'], id: 'title-plate-open' },
+      { title: '     <orange class="orange" />', highlight: ['orange'], id: 'title-orange' },
+      { title: '  </plate>', highlight: ['plate', 'title-plate-open'], id: 'title-plate-close' }
+    ],
+    activeItems: ['orange'],
+    header: 'Select orange!'
   }
 ]
 

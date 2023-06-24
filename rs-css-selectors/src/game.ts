@@ -117,11 +117,14 @@ function addHighlightListeners (nodesArr: NodeListOf<HTMLElement>): void {
 }
 
 function winLevel (): void {
-  console.log('WinLivel')
   const activeItems: NodeListOf<HTMLDivElement> = document.querySelectorAll('.level-item_active')
-  activeItems.forEach(item => { item.classList.add('level-item_active-win') })
-  currentLevelIndex += 1
-  levelsArr.length > currentLevelIndex ? startLevel() : finishGame()
+  activeItems.forEach((item, index) => {
+    item.classList.add('level-item_active-win')
+    setTimeout(() => {
+      currentLevelIndex += 1
+      levelsArr.length > currentLevelIndex ? startLevel() : finishGame()
+    }, 320)
+  })
 }
 
 function shakeLevel (): void {

@@ -1,4 +1,5 @@
 export interface ILevel {
+  number: number
   correctAnswer: string
   items: IItemObject[]
   viewerTitles: ITitleObject[]
