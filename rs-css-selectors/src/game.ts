@@ -4,7 +4,7 @@ import { type ITitleObject, type ILevel } from './Types'
 export let currentLevelIndex: number = 0
 let writerId: NodeJS.Timeout
 
-export function startLevel(): void {
+export function startLevel (): void {
   const enterInput: HTMLInputElement | null = document.querySelector('.css-editor__input')
   if (enterInput === null) throw new Error('Unexpected null instead of input!')
   enterInput.value = ''
@@ -16,7 +16,7 @@ export function startLevel(): void {
   changeHeader(currentLevel)
 }
 
-function renderLevel(level: ILevel): void {
+function renderLevel (level: ILevel): void {
   const table: HTMLElement | null = document.querySelector('.table__wrapper')
   if (table == null) throw new Error('Unexpected null instead of view section!')
   const itemsWrapper: HTMLElement = document.createElement('div')
@@ -35,14 +35,14 @@ function renderLevel(level: ILevel): void {
   addHighlightListeners(itemsArr)
 }
 
-function changeHeader(level: ILevel): void {
+function changeHeader (level: ILevel): void {
   const header: HTMLElement | null = document.querySelector('.main__header')
   if (header == null) throw new Error('Unexpected null instead of header!')
 
   header.textContent = level.header
 }
 
-function changeHTMLViewer(level: ILevel): void {
+function changeHTMLViewer (level: ILevel): void {
   const viewer: HTMLElement | null = document.querySelector('.table-tag')
   if (viewer == null) throw new Error('Unexpected null instead of HTML Viewer!')
 
@@ -57,7 +57,7 @@ function changeHTMLViewer(level: ILevel): void {
   })
 }
 
-export function checkAnswer(answer: string): void {
+export function checkAnswer (answer: string): void {
   const currentLevel: ILevel = levelsArr[currentLevelIndex]
 
   if (answer === currentLevel.correctAnswer) {
@@ -67,7 +67,7 @@ export function checkAnswer(answer: string): void {
   }
 }
 
-export function writeSolution(): void {
+export function writeSolution (): void {
   if (writerId !== undefined) clearInterval(writerId)
   const currentLevel: ILevel = levelsArr[currentLevelIndex]
   const answerLetters: string[] = currentLevel.correctAnswer.split('')
@@ -83,11 +83,11 @@ export function writeSolution(): void {
   }, 200)
 }
 
-export function changeLevelIndex(index: number): void {
+export function changeLevelIndex (index: number): void {
   currentLevelIndex = index
 }
 
-function addHighlightListeners(nodesArr: NodeListOf<HTMLElement>): void {
+function addHighlightListeners (nodesArr: NodeListOf<HTMLElement>): void {
   nodesArr.forEach((elem: HTMLElement) => {
     elem.addEventListener('mouseover', () => {
       if (elem.dataset.highlight === undefined) throw new Error('Unexpected undefined')
@@ -116,7 +116,7 @@ function addHighlightListeners(nodesArr: NodeListOf<HTMLElement>): void {
   })
 }
 
-function winLevel(): void {
+function winLevel (): void {
   console.log('WinLivel')
   const activeItems: NodeListOf<HTMLDivElement> = document.querySelectorAll('.level-item_active')
   activeItems.forEach(item => { item.classList.add('level-item_active-win') })
@@ -124,7 +124,7 @@ function winLevel(): void {
   levelsArr.length > currentLevelIndex ? startLevel() : finishGame()
 }
 
-function shakeLevel(): void {
+function shakeLevel (): void {
   const activeItems: NodeListOf<HTMLDivElement> = document.querySelectorAll('.level-item_active')
   activeItems.forEach(item => {
     item.classList.add('level-item_active-lose')
@@ -134,6 +134,6 @@ function shakeLevel(): void {
   })
 }
 
-function finishGame(): void {
+function finishGame (): void {
   // alert('YOU WON')
 }
