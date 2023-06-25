@@ -115,11 +115,39 @@ export const levelDataArr: ILevel[] = [
     ],
     activeItems: ['orange'],
     header: 'Select orange in the bowl!'
+  },
+  {
+    number: 6,
+    correctAnswer: 'board + plate #watermelon',
+    items: [{
+      type: 'board',
+      highlight: ['title-board'],
+      id: 'board'
+    },
+    {
+      type: 'plate',
+      highlight: ['title-plate-open', 'title-plate-close'],
+      id: 'plate'
+    },
+    {
+      type: 'watermelon',
+      highlight: ['title-watermelon'],
+      id: 'watermelon'
+    }
+    ],
+    viewerTitles: [
+      { title: '  <board>', highlight: ['board'], id: 'title-board' },
+      { title: '  <plate>', highlight: ['plate', 'title-plate-close'], id: 'title-plate-open' },
+      { title: '    <watermelon id="watermelon" />', highlight: ['watermelon'], id: 'title-watermelon' },
+      { title: '  </plate>', highlight: ['plate', 'title-plate-open'], id: 'title-plate-close' }
+    ],
+    activeItems: ['watermelon'],
+    header: 'Select watermelon in the bowl!'
   }
 ]
 
 export const levelsArr: ILevel[] = []
-export function createLevelsArr (): void {
+export function createLevelsArr(): void {
   levelDataArr.forEach(data => {
     const level: ILevel = new Level(data)
     levelsArr.push(level)

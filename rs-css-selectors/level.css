@@ -73,7 +73,8 @@
     width: 250px;
 }
 
-.level-item__watermelon-wrapper_level-3::before {
+.level-item__watermelon-wrapper_level-3::before,
+.level-item__watermelon-wrapper_level-6::before {
     content: '<watermelon id="watermelon"></watermelon>';
     width: 300px;
 }
@@ -82,7 +83,8 @@
     content: '<cucumber></cucumber>';
 }
 
-.level-item__board-wrapper_level-5::before {
+.level-item__board-wrapper_level-5::before,
+.level-item__board-wrapper_level-6::before {
     content: '<board></board>';
 }
 
@@ -90,7 +92,8 @@
     width: 30px;
 }
 
-.level-item__orange-wrapper {
+.level-item__orange-wrapper,
+.level-item__watermelon-wrapper {
     z-index: 20;
 }
 
@@ -99,16 +102,21 @@
 }
 
 .level-item__orange-wrapper_level-2,
-.level-item__orange-wrapper_level-5 {
+.level-item__orange-wrapper_level-5,
+.level-item__watermelon-wrapper_level-3,
+.level-item__watermelon-wrapper_level-6 {
     position: absolute;
+}
+
+.level-item__watermelon-wrapper_level-6 {
+    right: 155px;
 }
 
 .level-item__board-wrapper {
     margin-left: 30px;
 }
 
-.level-item__watermelon-wrapper_level-3 {
-    position: absolute;
+.level-item__watermelon-wrapper {
     top: -25px;
 }
 
