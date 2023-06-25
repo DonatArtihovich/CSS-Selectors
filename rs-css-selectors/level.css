@@ -67,17 +67,60 @@
     content: '<plate></plate>'
 }
 
-.level-item__orange-wrapper_level-2::before {
+.level-item__orange-wrapper_level-2::before,
+.level-item__orange-wrapper_level-5::before {
     content: '<orange class="orange"></orange>';
     width: 250px;
+}
+
+.level-item__watermelon-wrapper_level-3::before {
+    content: '<watermelon id="watermelon"></watermelon>';
+    width: 300px;
+}
+
+.level-item__cucumber-wrapper_level-4::before {
+    content: '<cucumber></cucumber>';
+}
+
+.level-item__board-wrapper_level-5::before {
+    content: '<board></board>';
+}
+
+.level-item__cucumber-wrapper {
+    width: 30px;
 }
 
 .level-item__orange-wrapper {
     z-index: 20;
 }
 
-.level-item__orange-wrapper_level-2 {
+.level-item__board-wrapper {
+    width: 200px;
+}
+
+.level-item__orange-wrapper_level-2,
+.level-item__orange-wrapper_level-5 {
     position: absolute;
+}
+
+.level-item__board-wrapper {
+    margin-left: 30px;
+}
+
+.level-item__watermelon-wrapper_level-3 {
+    position: absolute;
+    top: -25px;
+}
+
+.cucumber-picture {
+    width: 30px;
+    height: 104px;
+    object-fit: cover;
+    border-radius: 50px/110px;
+}
+
+.watermelon-picture {
+    border-radius: 100px;
 }
 
 .orange-picture {
@@ -88,6 +131,12 @@
 
 .plate-picture {
     border-radius: 50px;
+}
+
+.board-picture {
+    width: 150px;
+    border-radius: 20px;
+    object-fit: cover;
 }
 
 .table-tag__content:hover,

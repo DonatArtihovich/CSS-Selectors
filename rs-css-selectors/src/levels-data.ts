@@ -50,6 +50,71 @@ export const levelDataArr: ILevel[] = [
     ],
     activeItems: ['orange'],
     header: 'Select orange!'
+  },
+  {
+    number: 3,
+    correctAnswer: '#watermelon',
+    items: [{
+      type: 'plate',
+      highlight: ['title-plate-open', 'title-plate-close'],
+      id: 'plate'
+    },
+    {
+      type: 'watermelon',
+      highlight: ['title-watermelon'],
+      id: 'watermelon'
+    }
+    ],
+    viewerTitles: [
+      { title: '  <plate>', highlight: ['plate', 'title-plate-close'], id: 'title-plate-open' },
+      { title: '     <watermelon id="watermelon" />', highlight: ['watermelon'], id: 'title-watermelon' },
+      { title: '  </plate>', highlight: ['plate', 'title-plate-open'], id: 'title-plate-close' }
+    ],
+    activeItems: ['watermelon'],
+    header: 'Select watermelon!'
+  },
+  {
+    number: 4,
+    correctAnswer: 'plate + cucumber',
+    items: [{
+      type: 'plate',
+      highlight: ['title-plate'],
+      id: 'plate'
+    },
+    {
+      type: 'cucumber',
+      highlight: ['title-cucumber'],
+      id: 'cucumber'
+    }
+    ],
+    viewerTitles: [
+      { title: '  <plate />', highlight: ['plate'], id: 'title-plate' },
+      { title: '  <cucumber />', highlight: ['cucumber'], id: 'title-cucumber' }
+    ],
+    activeItems: ['cucumber'],
+    header: 'Select the cucumber next to the plate!'
+  },
+  {
+    number: 5,
+    correctAnswer: 'board .orange',
+    items: [{
+      type: 'board',
+      highlight: ['title-board-open', 'title-board-close'],
+      id: 'board'
+    },
+    {
+      type: 'orange',
+      highlight: ['title-orange'],
+      id: 'orange'
+    }
+    ],
+    viewerTitles: [
+      { title: '  <board>', highlight: ['board', 'title-board-close'], id: 'title-board-open' },
+      { title: '    <orange class="orange" />', highlight: ['orange'], id: 'title-orange' },
+      { title: '  </board>', highlight: ['board', 'title-board-open'], id: 'title-board-close' }
+    ],
+    activeItems: ['orange'],
+    header: 'Select orange in the bowl!'
   }
 ]
 
