@@ -276,6 +276,54 @@ export const levelDataArr: ILevel[] = [
     ],
     activeItems: ['cucumber', 'watermelon'],
     header: 'Select watermelon on plate and cucumber on the board!'
+  },
+  {
+    number: 10,
+    correctAnswer: '*',
+    items: [{
+      type: 'plate',
+      highlight: ['title-plate1-open', 'title-plate1-close'],
+      id: 'plate1'
+    },
+    {
+      type: 'orange',
+      highlight: ['title-orange'],
+      id: 'orange'
+    },
+    {
+      type: 'plate',
+      highlight: ['title-plate2-open', 'title-plate2-close'],
+      id: 'plate2'
+    },
+    {
+      type: 'board',
+      highlight: ['title-board-open', 'title-board-close'],
+      id: 'board'
+    },
+    {
+      type: 'watermelon',
+      highlight: ['title-watermelon'],
+      id: 'watermelon'
+    },
+    {
+      type: 'cucumber',
+      highlight: ['title-cucumber'],
+      id: 'cucumber'
+    }
+    ],
+    viewerTitles: [
+      { title: '  <plate>', highlight: ['plate1'], id: 'title-plate1-open' },
+      { title: '    <orange class="orange" />', highlight: ['orange'], id: 'title-orange' },
+      { title: '  </plate>', highlight: ['plate1'], id: 'title-plate1-close' },
+      { title: '  <plate>', highlight: ['plate2', 'title-plate2-close'], id: 'title-plate2-open' },
+      { title: '    <watermelon id="watermelon" />', highlight: ['watermelon'], id: 'title-watermelon' },
+      { title: '  </plate>', highlight: ['plate2', 'title-plate2-open'], id: 'title-plate2-close' },
+      { title: '  <board>', highlight: ['board', 'title-board-close'], id: 'title-board-open' },
+      { title: '    <cucumber class="cucumber" />', highlight: ['cucumber'], id: 'title-cucumber' },
+      { title: '  <board>', highlight: ['board', 'title-board-open'], id: 'title-board-close' }
+    ],
+    activeItems: ['orange', 'cucumber', 'watermelon', 'plate1', 'plate2', 'board'],
+    header: 'Select all without "," !'
   }
 ]
 

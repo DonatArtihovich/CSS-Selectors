@@ -98,16 +98,14 @@
     width: 200px;
 }
 
-.level-item__orange-wrapper_level-2,
-.level-item__orange-wrapper_level-5,
-.level-item__watermelon-wrapper_level-3,
-.level-item__watermelon-wrapper_level-6,
-.level-item__cucumber-wrapper_level-7,
-.level-item__watermelon-wrapper_level-8,
-.level-item__orange-wrapper_level-8,
-.level-item__watermelon-wrapper_level-9,
-.level-item__cucumber-wrapper_level-9 {
+.level-item__orange-wrapper,
+.level-item__watermelon-wrapper,
+.level-item__cucumber-wrapper {
     position: absolute;
+}
+
+.level-item__cucumber-wrapper_level-4 {
+    position: relative;
 }
 
 .level-item__watermelon-wrapper_level-6 {
@@ -115,7 +113,8 @@
 }
 
 .level-item__cucumber-wrapper_level-7::before,
-.level-item__cucumber-wrapper_level-9::before {
+.level-item__cucumber-wrapper_level-9::before,
+.level-item__cucumber-wrapper_level-10::before {
     content: '<cucumber class="cucumber"></cucumber>';
     width: 250px;
 }
@@ -141,13 +140,20 @@
     left: 255px;
 }
 
-.level-item__watermelon-wrapper_level-9 {
+.level-item__watermelon-wrapper_level-9,
+.level-item__watermelon-wrapper_level-10 {
     left: 240px;
 }
 
-.level-item__cucumber-wrapper_level-9 {
+.level-item__cucumber-wrapper_level-9,
+.level-item__cucumber-wrapper_level-10 {
     top: -20px;
     right: 230px;
+}
+
+.level-item__orange-wrapper_level-10 {
+    top: 10px;
+    left: 140px;
 }
 
 .level-item__board-wrapper {
