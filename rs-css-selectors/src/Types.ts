@@ -15,6 +15,7 @@ export interface IItemObject {
   type: string
   highlight: string[]
   id: string
+  number?: number
 }
 
 export interface ITitleObject {

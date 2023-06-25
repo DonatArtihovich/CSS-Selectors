@@ -142,12 +142,63 @@ export const levelDataArr: ILevel[] = [
       { title: '  </plate>', highlight: ['plate', 'title-plate-open'], id: 'title-plate-close' }
     ],
     activeItems: ['watermelon'],
-    header: 'Select watermelon in the bowl!'
+    header: 'Select watermelon on plate!'
+  },
+  {
+    number: 7,
+    correctAnswer: 'plate .cucumber',
+    items: [{
+      type: 'plate',
+      highlight: ['title-plate1-open', 'title-plate1-close'],
+      id: 'plate1'
+    },
+    {
+      type: 'plate',
+      highlight: ['title-plate2-open', 'title-plate2-close'],
+      id: 'plate2'
+    },
+    {
+      type: 'board',
+      highlight: ['title-board-open', 'title-board-close'],
+      id: 'board'
+    },
+    {
+      type: 'cucumber',
+      highlight: ['title-cucumber1'],
+      id: 'cucumber1',
+      number: 1
+    },
+    {
+      type: 'cucumber',
+      highlight: ['title-cucumber2'],
+      id: 'cucumber2',
+      number: 2
+    },
+    {
+      type: 'cucumber',
+      highlight: ['title-cucumber3'],
+      id: 'cucumber3',
+      number: 3
+    }
+    ],
+    viewerTitles: [
+      { title: '  <plate>', highlight: ['plate1', 'title-plate1-close'], id: 'title-plate1-open' },
+      { title: '    <cucumber class="cucumber" />', highlight: ['cucumber1'], id: 'title-cucumber1' },
+      { title: '  </plate>', highlight: ['plate1', 'title-plate1-open'], id: 'title-plate1-close' },
+      { title: '  <plate>', highlight: ['plate2', 'title-plate2-close'], id: 'title-plate2-open' },
+      { title: '    <cucumber class="cucumber" />', highlight: ['cucumber2'], id: 'title-cucumber2' },
+      { title: '  </plate>', highlight: ['plate2', 'title-plate2-open'], id: 'title-plate2-close' },
+      { title: '  <board>', highlight: ['board', 'title-board-close'], id: 'title-board-open' },
+      { title: '    <cucumber class="cucumber" />', highlight: ['cucumber3'], id: 'title-cucumber3' },
+      { title: '  <board>', highlight: ['board', 'title-board-open'], id: 'title-board-close' }
+    ],
+    activeItems: ['cucumber1', 'cucumber2'],
+    header: 'Select cucumbers in plates!'
   }
 ]
 
 export const levelsArr: ILevel[] = []
-export function createLevelsArr(): void {
+export function createLevelsArr (): void {
   levelDataArr.forEach(data => {
     const level: ILevel = new Level(data)
     levelsArr.push(level)

@@ -35,6 +35,7 @@ export class Level implements ILevel {
       itemElement.id = item.id
       itemElement.dataset.highlight = JSON.stringify(item.highlight)
       itemWrapper.className = `level-item__picture-wrapper level-item__${item.type}-wrapper level-item__${item.type}-wrapper_level-${this.number}`
+      if (item.number !== 0 && item.number !== undefined) itemWrapper.classList.add(`level-item__${item.type}-wrapper_level-${this.number}_${item.number}`)
       if (this.activeItems.includes(item.id)) itemWrapper.classList.add('level-item_active')
       itemWrapper.append(itemElement)
 
