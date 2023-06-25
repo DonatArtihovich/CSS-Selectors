@@ -194,6 +194,88 @@ export const levelDataArr: ILevel[] = [
     ],
     activeItems: ['cucumber1', 'cucumber2'],
     header: 'Select cucumbers in plates!'
+  },
+  {
+    number: 8,
+    correctAnswer: 'plate ~ board #watermelon',
+    items: [{
+      type: 'plate',
+      highlight: ['title-plate1'],
+      id: 'plate1'
+    },
+    {
+      type: 'plate',
+      highlight: ['title-plate2-open', 'title-plate2-close'],
+      id: 'plate2'
+    },
+    {
+      type: 'board',
+      highlight: ['title-board-open', 'title-board-close'],
+      id: 'board'
+    },
+    {
+      type: 'orange',
+      highlight: ['title-orange'],
+      id: 'orange'
+    },
+    {
+      type: 'watermelon',
+      highlight: ['title-watermelon'],
+      id: 'watermelon'
+    }
+    ],
+    viewerTitles: [
+      { title: '  <plate />', highlight: ['plate1'], id: 'title-plate1' },
+      { title: '  <plate>', highlight: ['plate2', 'title-plate2-close'], id: 'title-plate2-open' },
+      { title: '    <orange class="orange" />', highlight: ['orange'], id: 'title-orange' },
+      { title: '  </plate>', highlight: ['plate2', 'title-plate2-open'], id: 'title-plate2-close' },
+      { title: '  <board>', highlight: ['board', 'title-board-close'], id: 'title-board-open' },
+      { title: '    <watermelon id="watermelon" />', highlight: ['watermelon'], id: 'title-watermelon' },
+      { title: '  <board>', highlight: ['board', 'title-board-open'], id: 'title-board-close' }
+    ],
+    activeItems: ['watermelon'],
+    header: 'Select watermelon on board at the table with plates!'
+  },
+  {
+    number: 9,
+    correctAnswer: 'plate #watermelon, board .cucumber',
+    items: [{
+      type: 'plate',
+      highlight: ['title-plate1'],
+      id: 'plate1'
+    },
+    {
+      type: 'plate',
+      highlight: ['title-plate2-open', 'title-plate2-close'],
+      id: 'plate2'
+    },
+    {
+      type: 'board',
+      highlight: ['title-board-open', 'title-board-close'],
+      id: 'board'
+    },
+    {
+      type: 'watermelon',
+      highlight: ['title-watermelon'],
+      id: 'watermelon'
+    },
+    {
+      type: 'cucumber',
+      highlight: ['title-cucumber'],
+      id: 'cucumber'
+    }
+    ],
+    viewerTitles: [
+      { title: '  <plate />', highlight: ['plate1'], id: 'title-plate1' },
+      { title: '  <plate>', highlight: ['plate2', 'title-plate2-close'], id: 'title-plate2-open' },
+      { title: '    <watermelon id="watermelon" />', highlight: ['watermelon'], id: 'title-watermelon' },
+      { title: '  </plate>', highlight: ['plate2', 'title-plate2-open'], id: 'title-plate2-close' },
+      { title: '  <board>', highlight: ['board', 'title-board-close'], id: 'title-board-open' },
+      { title: '    <cucumber class="cucumber" />', highlight: ['cucumber'], id: 'title-cucumber' },
+      { title: '  <board>', highlight: ['board', 'title-board-open'], id: 'title-board-close' }
+    ],
+    activeItems: ['cucumber', 'watermelon'],
+    header: 'Select watermelon on plate and cucumber on the board!'
   }
 ]
 
