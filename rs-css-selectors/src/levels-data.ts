@@ -114,7 +114,7 @@ export const levelDataArr: ILevel[] = [
       { title: '  </board>', highlight: ['board', 'title-board-open'], id: 'title-board-close' }
     ],
     activeItems: ['orange'],
-    header: 'Select orange in the bowl!'
+    header: 'Select orange on the board!'
   },
   {
     number: 6,
