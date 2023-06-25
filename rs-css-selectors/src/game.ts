@@ -59,7 +59,6 @@ function changeHTMLViewer (level: ILevel): void {
 
 export function checkAnswer (answer: string): void {
   const currentLevel: ILevel = levelsArr[currentLevelIndex]
-  console.log(currentLevelIndex)
   if (answer === currentLevel.correctAnswer) {
     winLevel()
   } else {
@@ -138,5 +137,5 @@ function shakeLevel (): void {
 }
 
 function finishGame (): void {
-  // alert('YOU WON')
+  alert('YOU WON')
 }

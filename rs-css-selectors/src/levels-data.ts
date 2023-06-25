@@ -328,7 +328,7 @@ export const levelDataArr: ILevel[] = [
 ]
 
 export const levelsArr: ILevel[] = []
-export function createLevelsArr(): void {
+export function createLevelsArr (): void {
   levelDataArr.forEach(data => {
     const level: ILevel = new Level(data)
     levelsArr.push(level)
