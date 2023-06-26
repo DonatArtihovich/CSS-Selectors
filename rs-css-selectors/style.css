@@ -74,6 +74,7 @@ body {
 
 .main__header {
     margin: 20px auto;
+    text-align: center;
     /* font-size: 3rem; */
 }
 
@@ -466,6 +467,10 @@ body {
         width: 13.333px;
         height: 4.667px;
         bottom: 3%;
+    }
+
+    .html-viewer__markup {
+        font-size: 0.8rem;
     }
 }
 
