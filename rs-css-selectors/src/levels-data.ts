@@ -332,9 +332,9 @@ export const levelDataArr: ILevel[] = [
     }
     ],
     viewerTitles: [
-      { title: '  <plate>', highlight: ['plate1'], id: 'title-plate1-open' },
+      { title: '  <plate>', highlight: ['plate1', 'title-plate1-close'], id: 'title-plate1-open' },
       { title: '    <orange class="orange" />', highlight: ['orange'], id: 'title-orange' },
-      { title: '  </plate>', highlight: ['plate1'], id: 'title-plate1-close' },
+      { title: '  </plate>', highlight: ['plate1', 'title-plate1-open'], id: 'title-plate1-close' },
       { title: '  <plate>', highlight: ['plate2', 'title-plate2-close'], id: 'title-plate2-open' },
       { title: '    <watermelon id="watermelon" />', highlight: ['watermelon'], id: 'title-watermelon' },
       { title: '  </plate>', highlight: ['plate2', 'title-plate2-open'], id: 'title-plate2-close' },
