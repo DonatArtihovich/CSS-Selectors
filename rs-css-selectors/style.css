@@ -427,6 +427,28 @@ body {
     height: auto;
 }
 
+
+.table-label,
+.table-sublabel {
+    position: absolute;
+    color: rgb(144, 71, 11);
+    white-space: nowrap;
+}
+
+.table-label {
+    font-size: 2rem;
+    top: 7px;
+    left: 40%;
+    text-shadow: 2px 2px black;
+}
+
+.table-sublabel {
+    top: 50px;
+    font-size: 1.5rem;
+    left: 15%;
+    text-shadow: 1.5px 1.5px black;
+}
+
 @font-face {
     font-family: 'Menlo';
     src: url("./assets/fonts/Menlo-Regular.ttf");
@@ -492,6 +514,18 @@ body {
 
     .html-viewer__markup {
         font-size: 0.8rem;
+    }
+
+    .table-label {
+        font-size: 1.5rem;
+        top: 2px;
+        text-shadow: 1.5px 1.5px black;
+    }
+
+    .table-sublabel {
+        top: 30px;
+        font-size: 1rem;
+        text-shadow: 1px 1px black;
     }
 }
 
@@ -695,5 +729,17 @@ body {
     .css-editor__input,
     .css-editor__enter-area {
         font-size: 0.6rem;
+    }
+
+    .table-label {
+        font-size: 1rem;
+        top: 1px;
+        text-shadow: 1px 1px black;
+    }
+
+    .table-sublabel {
+        top: 20px;
+        font-size: 0.7rem;
+        text-shadow: 0.7px 0.7px black;
     }
 }

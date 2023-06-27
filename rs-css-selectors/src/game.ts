@@ -10,12 +10,13 @@ export function startLevel (): void {
   const enterInput: HTMLInputElement | null = document.querySelector('.css-editor__input')
   if (enterInput === null) throw new Error('Unexpected null instead of input!')
   enterInput.value = ''
-  const levelPicturesWrapper: HTMLDivElement | null = document.querySelector('.level-item__pictures-wrapper')
-  if (levelPicturesWrapper !== null) levelPicturesWrapper.remove()
+  const table: HTMLElement | null = document.querySelector('.table__wrapper')
+  if (table == null) throw new Error('Unexpected null instead of view section!')
+  table.innerHTML = '<div class="table"></div><div class="table__side-view"></div><div class="table__table-leg table-left-leg"></div><div class="table__table-leg table-right-leg"></div>'
   const currentLevel: ILevel = levelsArr[currentLevelIndex]
   changeHTMLViewer(currentLevel)
   renderLevel(currentLevel)
-  changeHeader(currentLevel)
+  changeHeader(currentLevel.header)
 }
 
 function renderLevel (level: ILevel): void {
@@ -37,11 +38,11 @@ function renderLevel (level: ILevel): void {
   addHighlightListeners(itemsArr)
 }
 
-function changeHeader (level: ILevel): void {
-  const header: HTMLElement | null = document.querySelector('.main__header')
-  if (header == null) throw new Error('Unexpected null instead of header!')
+function changeHeader (header: string): void {
+  const headerElement: HTMLElement | null = document.querySelector('.main__header')
+  if (headerElement == null) throw new Error('Unexpected null instead of header!')
 
-  header.textContent = level.header
+  headerElement.textContent = header
 }
 
 function changeHTMLViewer (level: ILevel): void {
@@ -178,5 +179,17 @@ export function resetProgress (): void {
 }
 
 function finishGame (): void {
-  alert('YOU WON')
+  const table: HTMLElement | null = document.querySelector('.table__wrapper')
+  if (table == null) throw new Error('Unexpected null instead of view section!')
+
+  const tableLabel = document.createElement('h2')
+  tableLabel.classList.add('table-label')
+  tableLabel.textContent = 'You Won!'
+
+  const tableSublabel = document.createElement('h3')
+  tableSublabel.classList.add('table-sublabel')
+  tableSublabel.textContent = 'Good luck in learning programming!'
+
+  table.append(tableLabel, tableSublabel)
+  changeHeader('HOORAY!!!')
 }
