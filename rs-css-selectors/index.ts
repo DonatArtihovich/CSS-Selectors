@@ -1,5 +1,4 @@
 import './assets/img/rs_school_js.svg'
-import './assets/img/tick.svg'
 import './assets/img/plate.png'
 import './assets/img/board.png'
 import './assets/img/cucumber.png'

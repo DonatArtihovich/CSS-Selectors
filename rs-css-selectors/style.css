@@ -373,6 +373,10 @@ body {
     height: auto;
 }
 
+.level-item__status-image_completed {
+    fill: lightgreen;
+}
+
 .reset-button {
     margin-top: 30px;
     width: 200px;
