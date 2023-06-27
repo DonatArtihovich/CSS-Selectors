@@ -62,6 +62,11 @@ function changeHTMLViewer (level: ILevel): void {
 
 export function checkAnswer (answer: string): void {
   const currentLevel: ILevel = levelsArr[currentLevelIndex]
+  if (!isNaN(+answer) && +answer > 0 && +answer < 11) {
+    changeLevelIndex(Math.floor(+answer) - 1)
+    startLevel()
+    return
+  }
   if (currentLevel.allowedAnswers.includes(answer)) {
     winLevel()
   } else {
