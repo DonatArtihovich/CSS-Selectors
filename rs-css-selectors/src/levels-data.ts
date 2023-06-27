@@ -5,6 +5,7 @@ export const levelDataArr: ILevel[] = [
   {
     number: 1,
     correctAnswer: 'plate',
+    allowedAnswers: ['plate'],
     items: [{
       type: 'plate',
       highlight: ['title-plate1'],
@@ -32,6 +33,7 @@ export const levelDataArr: ILevel[] = [
   {
     number: 2,
     correctAnswer: '.orange',
+    allowedAnswers: ['orange', '.orange', 'plate orange', 'plate .orange', 'orange.orange'],
     items: [{
       type: 'plate',
       highlight: ['title-plate-open', 'title-plate-close'],
@@ -54,6 +56,7 @@ export const levelDataArr: ILevel[] = [
   {
     number: 3,
     correctAnswer: '#watermelon',
+    allowedAnswers: ['watermelon', '#watermelon', 'plate watermelon', 'plate #watermelon', 'watermelon#watermelon'],
     items: [{
       type: 'plate',
       highlight: ['title-plate-open', 'title-plate-close'],
@@ -76,6 +79,7 @@ export const levelDataArr: ILevel[] = [
   {
     number: 4,
     correctAnswer: 'plate + cucumber',
+    allowedAnswers: ['cucumber', 'plate + cucumber'],
     items: [{
       type: 'plate',
       highlight: ['title-plate'],
@@ -97,6 +101,7 @@ export const levelDataArr: ILevel[] = [
   {
     number: 5,
     correctAnswer: 'board .orange',
+    allowedAnswers: ['board .orange', 'orange', '.orange', 'orange.orange'],
     items: [{
       type: 'board',
       highlight: ['title-board-open', 'title-board-close'],
@@ -119,6 +124,7 @@ export const levelDataArr: ILevel[] = [
   {
     number: 6,
     correctAnswer: 'board + plate #watermelon',
+    allowedAnswers: ['board + plate #watermelon', '#watermelon', 'plate watermelon', 'plate #watermelon', 'watermelon', 'watermelon#watermelon'],
     items: [{
       type: 'board',
       highlight: ['title-board'],
@@ -147,6 +153,7 @@ export const levelDataArr: ILevel[] = [
   {
     number: 7,
     correctAnswer: 'plate .cucumber',
+    allowedAnswers: ['.cucumber', 'cucumber', 'plate .cucumber', 'cucumber.cucumber'],
     items: [{
       type: 'plate',
       highlight: ['title-plate1-open', 'title-plate1-close'],
@@ -198,6 +205,7 @@ export const levelDataArr: ILevel[] = [
   {
     number: 8,
     correctAnswer: 'plate ~ board #watermelon',
+    allowedAnswers: ['plate ~ board #watermelon', 'board #watermelon', 'board watermelon', '#watermelon', 'watermelon', 'watermelon#watermelon'],
     items: [{
       type: 'plate',
       highlight: ['title-plate1'],
@@ -239,6 +247,9 @@ export const levelDataArr: ILevel[] = [
   {
     number: 9,
     correctAnswer: 'plate #watermelon, board .cucumber',
+    allowedAnswers: ['plate #watermelon, board .cucumber', 'plate watermelon, board cucumber',
+      'plate watermelon#watermelon, board cucumber.cucumber', 'watermelon, cucumber', '#watermelon, .cucumber',
+      'watermelon#watermelon, cucumber.cucumber'],
     items: [{
       type: 'plate',
       highlight: ['title-plate1'],
@@ -280,6 +291,15 @@ export const levelDataArr: ILevel[] = [
   {
     number: 10,
     correctAnswer: '*',
+    allowedAnswers: [
+      '*',
+      'plate, orange, watermelon, board, cucumber',
+      'plate, .orange, #watermelon, board, .cucumber',
+      'plate, orange.orange, watermelon#watermelon, board, cucumber.cucumber',
+      'plate, plate orange, plate watermelon, board, board cucumber',
+      'plate, plate .orange, plate #watermelon, board, board .cucumber',
+      'plate, plate orange.orange, plate watermelon#watermelon, board, board cucumber.cucumber'
+    ],
     items: [{
       type: 'plate',
       highlight: ['title-plate1-open', 'title-plate1-close'],

@@ -3,6 +3,7 @@ import { type ILevel, type IItemObject, type ITitleObject } from './Types'
 export class Level implements ILevel {
   public number: number
   public correctAnswer: string
+  public allowedAnswers: string[]
   public items: IItemObject[]
   public viewerTitles: ITitleObject[]
   public activeItems: string[]
@@ -11,6 +12,7 @@ export class Level implements ILevel {
   constructor ({
     number,
     correctAnswer,
+    allowedAnswers,
     items,
     viewerTitles,
     activeItems,
@@ -18,6 +20,7 @@ export class Level implements ILevel {
   }: ILevel) {
     this.number = number
     this.correctAnswer = correctAnswer
+    this.allowedAnswers = allowedAnswers
     this.items = items
     this.viewerTitles = viewerTitles
     this.activeItems = activeItems

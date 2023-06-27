@@ -13,11 +13,11 @@ function addCheckAnswerListener (): void {
   if (enterInput === null) throw new Error('Unexpected null instead of input!')
 
   enterButton.addEventListener('click', () => {
-    checkAnswer(enterInput.value)
+    checkAnswer(enterInput.value.trim())
   })
   enterInput.addEventListener('keydown', (e: KeyboardEvent) => {
     if (e.key !== 'Enter') return
-    checkAnswer(enterInput.value)
+    checkAnswer(enterInput.value.trim())
   })
 }
 

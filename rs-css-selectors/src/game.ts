@@ -59,7 +59,7 @@ function changeHTMLViewer (level: ILevel): void {
 
 export function checkAnswer (answer: string): void {
   const currentLevel: ILevel = levelsArr[currentLevelIndex]
-  if (answer === currentLevel.correctAnswer) {
+  if (currentLevel.allowedAnswers.includes(answer)) {
     winLevel()
   } else {
     shakeLevel()

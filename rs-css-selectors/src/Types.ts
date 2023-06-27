@@ -1,6 +1,7 @@
 export interface ILevel {
   number: number
   correctAnswer: string
+  allowedAnswers: string[]
   items: IItemObject[]
   viewerTitles: ITitleObject[]
   activeItems: string[]
