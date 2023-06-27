@@ -373,8 +373,21 @@ body {
     height: auto;
 }
 
-.level-item__status-image_completed {
+.level-item_completed .level-item__status-image {
     fill: lightgreen;
+}
+
+.level-item__status-image_help-status {
+    display: none;
+}
+
+.level-item_help .level-item__status-image {
+    display: none;
+}
+
+.level-item_help .level-item__status-image_help-status {
+    display: block;
+    fill: rgb(238, 198, 31);
 }
 
 .reset-button {

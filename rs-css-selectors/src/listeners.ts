@@ -1,9 +1,10 @@
-import { checkAnswer, writeSolution, changeLevelIndex, startLevel } from './game'
+import { checkAnswer, writeSolution, changeLevelIndex, startLevel, resetProgress } from './game'
 
 export function addListeners (): void {
   addCheckAnswerListener()
   addHelperListener()
   addLevelsMenuListeners()
+  addResetProgressButtonListener()
 }
 
 function addCheckAnswerListener (): void {
@@ -39,4 +40,11 @@ function addLevelsMenuListeners (): void {
       startLevel()
     })
   })
+}
+
+function addResetProgressButtonListener (): void {
+  const resetButton: HTMLButtonElement | null = document.querySelector('.reset-button')
+  if (resetButton == null) throw new Error('Unexpected null instead of reset progress button!')
+
+  resetButton.addEventListener('click', () => { resetProgress() })
 }
