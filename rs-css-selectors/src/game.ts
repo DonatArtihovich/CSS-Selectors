@@ -87,6 +87,7 @@ export function writeSolution (): void {
 
 export function changeLevelIndex (index: number): void {
   currentLevelIndex = index
+  if (levelsArr.length <= currentLevelIndex) return
   const activeLevel: HTMLDivElement | null = document.querySelector('.level_active')
   const newActiveLevel: HTMLDivElement | null = document.querySelector(`.level-item[data-level="${index}"]`)
   if ((activeLevel == null) || (newActiveLevel == null)) throw new Error('Unexpected null against of active level!')
