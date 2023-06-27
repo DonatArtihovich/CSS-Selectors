@@ -153,7 +153,7 @@ export const levelDataArr: ILevel[] = [
   {
     number: 7,
     correctAnswer: 'plate .cucumber',
-    allowedAnswers: ['.cucumber', 'cucumber', 'plate .cucumber', 'cucumber.cucumber'],
+    allowedAnswers: ['plate cucumber', 'plate .cucumber', 'plate cucumber.cucumber'],
     items: [{
       type: 'plate',
       highlight: ['title-plate1-open', 'title-plate1-close'],
@@ -348,7 +348,7 @@ export const levelDataArr: ILevel[] = [
 ]
 
 export const levelsArr: ILevel[] = []
-export function createLevelsArr (): void {
+export function createLevelsArr(): void {
   levelDataArr.forEach(data => {
     const level: ILevel = new Level(data)
     levelsArr.push(level)
