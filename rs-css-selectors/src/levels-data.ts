@@ -255,27 +255,27 @@ export const levelDataArr: ILevel[] = [
       id: 'board'
     },
     {
-      type: 'watermelon',
-      highlight: ['title-watermelon'],
-      id: 'watermelon'
-    },
-    {
       type: 'cucumber',
       highlight: ['title-cucumber'],
       id: 'cucumber'
+    },
+    {
+      type: 'watermelon',
+      highlight: ['title-watermelon'],
+      id: 'watermelon'
     }
     ],
     viewerTitles: [
       { title: '  <plate />', highlight: ['plate1'], id: 'title-plate1' },
       { title: '  <plate>', highlight: ['plate2', 'title-plate2-close'], id: 'title-plate2-open' },
-      { title: '    <watermelon id="watermelon" />', highlight: ['watermelon'], id: 'title-watermelon' },
+      { title: '    <cucumber class="cucumber" />', highlight: ['cucumber'], id: 'title-cucumber' },
       { title: '  </plate>', highlight: ['plate2', 'title-plate2-open'], id: 'title-plate2-close' },
       { title: '  <board>', highlight: ['board', 'title-board-close'], id: 'title-board-open' },
-      { title: '    <cucumber class="cucumber" />', highlight: ['cucumber'], id: 'title-cucumber' },
+      { title: '    <watermelon id="watermelon" />', highlight: ['watermelon'], id: 'title-watermelon' },
       { title: '  <board>', highlight: ['board', 'title-board-open'], id: 'title-board-close' }
     ],
     activeItems: ['cucumber', 'watermelon'],
-    header: 'Select watermelon on plate and cucumber on the board!'
+    header: 'Select cucumber on plate and watermelon on the board!'
   },
   {
     number: 10,

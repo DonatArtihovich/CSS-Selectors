@@ -141,12 +141,18 @@
     left: 255px;
 }
 
-.level-item__watermelon-wrapper_level-9,
 .level-item__watermelon-wrapper_level-10 {
     left: 240px;
 }
 
-.level-item__cucumber-wrapper_level-9,
+.level-item__cucumber-wrapper_level-9 {
+    left: 270px;
+}
+
+.level-item__watermelon-wrapper_level-9 {
+    right: 205px;
+}
+
 .level-item__cucumber-wrapper_level-10 {
     top: -20px;
     right: 230px;
@@ -288,8 +294,7 @@
     }
 
     .level-item__watermelon-wrapper_level-8,
-    .level-item__watermelon-wrapper_level-9,
-    .level-item__watermelon-wrapper_level-10 {
+    .level-item__watermelon-wrapper_level-9 {
         right: 93px;
         left: auto;
     }
@@ -298,10 +303,19 @@
         top: -15px;
     }
 
-    .level-item__cucumber-wrapper_level-9,
+    .level-item__cucumber-wrapper_level-9 {
+        top: -10px;
+        left: 207px;
+    }
+
     .level-item__cucumber-wrapper_level-10 {
         top: -10px;
-        right: 190px;
+        right: 70px;
+    }
+
+    .level-item__watermelon-wrapper_level-10 {
+        right: 215px;
+        left: auto;
     }
 
     .level-item__orange-wrapper_level-10 {
@@ -329,5 +343,87 @@
     .level-item__picture:hover,
     .level-item__picture.highlighted {
         box-shadow: none;
+    }
+}
+
+@media(max-width: 600px) {
+
+    .level-item__picture-wrapper,
+    .level-item__picture {
+        width: 44.67px;
+    }
+
+    .level-item__pictures-wrapper {
+        width: 311.1px;
+    }
+
+    .level-item__orange-wrapper,
+    .orange-picture {
+        width: 33px;
+    }
+
+    .level-item__board-wrapper {
+        top: 10px;
+        margin: 0;
+    }
+
+    .level-item__board-wrapper_level-5 {
+        left: -12px;
+        margin-left: 30px;
+    }
+
+    .level-item__watermelon-wrapper_level-6 {
+        right: 90px;
+    }
+
+    .level-item__cucumber-wrapper_level-7_1 {
+        left: 83px;
+    }
+
+    .level-item__cucumber-wrapper_level-7_2 {
+        left: 149px;
+    }
+
+    .level-item__cucumber-wrapper_level-7_3 {
+        right: 53px;
+    }
+
+    .level-item__orange-wrapper_level-8 {
+        top: 7px;
+        left: 140px;
+    }
+
+    .level-item__watermelon-wrapper_level-9,
+    .level-item__watermelon-wrapper_level-8 {
+        right: 70px;
+    }
+
+    .level-item__cucumber-wrapper_level-9 {
+        top: -7px;
+        left: 150px;
+    }
+
+    .level-item__watermelon-wrapper_level-10 {
+        right: 130px;
+        left: auto;
+    }
+
+    .level-item__watermelon-wrapper {
+        top: -7px;
+    }
+
+    .level-item__cucumber-wrapper_level-10 {
+        top: -7px;
+        right: 50px;
+    }
+
+    .level-item__orange-wrapper_level-10 {
+        top: 7px;
+        left: 75px;
+    }
+
+    .cucumber-picture {
+        height: 45.5px;
+        width: 13.2px;
     }
 }

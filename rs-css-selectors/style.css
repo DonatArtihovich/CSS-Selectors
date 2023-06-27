@@ -669,4 +669,10 @@ body {
         height: 3px;
         bottom: 6%;
     }
+
+    .html-viewer__markup,
+    .css-editor__input,
+    .css-editor__enter-area {
+        font-size: 0.6rem;
+    }
 }
