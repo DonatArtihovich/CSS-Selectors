@@ -22,7 +22,8 @@ export default function addBurger (): void {
   menu?.addEventListener('click', e => {
     if (!menu.classList.contains('levels-list_active')) return
     const target: HTMLElement = e.target as HTMLElement
-    if (target.classList.contains('level-item') || target.classList.contains('reset-button')) {
+    if (target.classList.contains('level-item') || target.classList.contains('reset-button') ||
+      target.classList.contains('level-item__status-image') || target.classList.contains('level-item__header')) {
       toggleMenu()
     }
   })
