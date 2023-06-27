@@ -334,16 +334,6 @@
     .level-item__picture-wrapper::before {
         display: none;
     }
-
-    .table-tag__content.highlighted,
-    .table-tag__content:hover {
-        color: inherit;
-    }
-
-    .level-item__picture:hover,
-    .level-item__picture.highlighted {
-        box-shadow: none;
-    }
 }
 
 @media(max-width: 600px) {
