@@ -355,9 +355,13 @@ body {
     gap: 10px;
 }
 
+.level-item:hover,
+.level_active {
+    background-color: var(--main-background-color);
+}
+
 .level-item:hover {
     cursor: pointer;
-    background-color: var(--main-background-color);
 }
 
 .level-item:hover .level-item__header {

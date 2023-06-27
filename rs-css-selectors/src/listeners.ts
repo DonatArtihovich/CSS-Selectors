@@ -35,7 +35,7 @@ function addLevelsMenuListeners (): void {
     item.addEventListener('click', e => {
       const target: HTMLElement = e.currentTarget as HTMLElement
       if (target.dataset.level === undefined) throw new Error('Unexpected undefined!')
-      changeLevelIndex(+target.dataset.level - 1)
+      changeLevelIndex(+target.dataset.level)
       startLevel()
     })
   })

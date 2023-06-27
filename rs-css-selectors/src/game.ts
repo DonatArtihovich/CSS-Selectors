@@ -84,6 +84,11 @@ export function writeSolution (): void {
 
 export function changeLevelIndex (index: number): void {
   currentLevelIndex = index
+  const activeLevel: HTMLDivElement | null = document.querySelector('.level_active')
+  const newActiveLevel: HTMLDivElement | null = document.querySelector(`.level-item[data-level="${index}"]`)
+  if ((activeLevel == null) || (newActiveLevel == null)) throw new Error('Unexpected null against of active level!')
+  activeLevel.classList.remove('level_active')
+  newActiveLevel.classList.add('level_active')
 }
 
 function addHighlightListeners (nodesArr: NodeListOf<HTMLElement>): void {
@@ -121,7 +126,7 @@ function winLevel (): void {
     item.classList.add('level-item_active-win')
   })
   setTimeout(() => {
-    currentLevelIndex += 1
+    changeLevelIndex(currentLevelIndex + 1)
     levelsArr.length > currentLevelIndex ? startLevel() : finishGame()
   }, 320)
 }
