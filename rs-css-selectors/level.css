@@ -141,6 +141,17 @@
     left: 255px;
 }
 
+.level-item__cucumber-wrapper_level-7::before,
+.level-item__orange-wrapper_level-8::before,
+.level-item__cucumber-wrapper_level-9::before,
+.level-item__orange-wrapper_level-10::before {
+    top: -80px;
+}
+
+.level-item__plate-wrapper_level-10::before {
+    top: -60px;
+}
+
 .level-item__watermelon-wrapper_level-10 {
     left: 240px;
 }

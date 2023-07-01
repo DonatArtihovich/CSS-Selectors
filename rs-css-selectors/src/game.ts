@@ -67,7 +67,7 @@ export function checkAnswer (answer: string): void {
     startLevel()
     return
   }
-  if (currentLevel.allowedAnswers.includes(answer)) {
+  if (currentLevel.allowedAnswers.includes(answer.toLowerCase())) {
     winLevel()
   } else {
     shakeLevel()

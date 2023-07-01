@@ -743,3 +743,33 @@ body {
         text-shadow: 0.7px 0.7px black;
     }
 }
+
+@media(min-width: 2000px) {
+    .main {
+        padding-left: 25vw;
+    }
+
+    .main__header {
+        margin-left: 15vw;
+    }
+
+    .help-button {
+        margin-left: 20vw;
+        align-self: flex-start;
+    }
+}
+
+@media(min-width: 3000px) {
+    .main {
+        padding-left: 25vw;
+    }
+
+    .main__header {
+        margin-left: 13vw;
+    }
+
+    .help-button {
+        margin-left: 16vw;
+        align-self: flex-start;
+    }
+}
