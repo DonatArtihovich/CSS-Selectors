@@ -5,6 +5,11 @@ export let currentLevelIndex: number = 0
 let writerId: NodeJS.Timeout
 let isWithHelp: boolean = false
 
+enum ViewerStartInners {
+  viewer = '<p class="table-tag__open">&lt;div class="table"&gt;</p>',
+  table = '<div class="table"></div><div class="table__side-view"></div><div class="table__table-leg table-left-leg"></div><div class="table__table-leg table-right-leg"></div>'
+}
+
 export function startLevel (): void {
   isWithHelp = false
   const enterInput: HTMLInputElement | null = document.querySelector('.css-editor__input')
@@ -12,7 +17,7 @@ export function startLevel (): void {
   enterInput.value = ''
   const table: HTMLElement | null = document.querySelector('.table__wrapper')
   if (table == null) throw new Error('Unexpected null instead of view section!')
-  table.innerHTML = '<div class="table"></div><div class="table__side-view"></div><div class="table__table-leg table-left-leg"></div><div class="table__table-leg table-right-leg"></div>'
+  table.innerHTML = ViewerStartInners.table
   const currentLevel: ILevel = levelsArr[currentLevelIndex]
   changeHTMLViewer(currentLevel)
   renderLevel(currentLevel)
@@ -48,11 +53,11 @@ function changeHeader (header: string): void {
 function changeHTMLViewer (level: ILevel): void {
   const viewer: HTMLElement | null = document.querySelector('.table-tag')
   if (viewer == null) throw new Error('Unexpected null instead of HTML Viewer!')
-
-  viewer.innerHTML = '<p class="table-tag__open">&lt;div class="table"&gt;</p>'
+  const viewerTitlesClassName = 'table-tag__content table-tag__content_parent'
+  viewer.innerHTML = ViewerStartInners.viewer
   level.viewerTitles.forEach((item: ITitleObject) => {
     const content = document.createElement('pre')
-    content.className = 'table-tag__content table-tag__content_parent'
+    content.className = viewerTitlesClassName
     content.textContent = item.title
     content.id = item.id
     content.dataset.highlight = JSON.stringify(item.highlight)
@@ -176,8 +181,10 @@ function saveProgress (): void {
 export function resetProgress (): void {
   localStorage.clear()
   const levelsArr: HTMLDivElement[] = [...document.querySelectorAll('.level-item')] as HTMLDivElement[]
+  const levelClassName = 'level-item'
+  const activeLevelClassName = 'level-item level_active'
   levelsArr.forEach((level, index) => {
-    level.className = index === 0 ? 'level-item level_active' : 'level-item'
+    level.className = index === 0 ? activeLevelClassName : levelClassName
   })
   currentLevelIndex = 0
   startLevel()
@@ -186,15 +193,18 @@ export function resetProgress (): void {
 function finishGame (): void {
   const table: HTMLElement | null = document.querySelector('.table__wrapper')
   if (table == null) throw new Error('Unexpected null instead of view section!')
+  const headerText = 'HOORAY!!!'
+  const winTableLabelText = 'You Won!'
+  const winTableSublabelText = 'Good luck in learning programming!'
 
   const tableLabel = document.createElement('h2')
   tableLabel.classList.add('table-label')
-  tableLabel.textContent = 'You Won!'
+  tableLabel.textContent = winTableLabelText
 
   const tableSublabel = document.createElement('h3')
   tableSublabel.classList.add('table-sublabel')
-  tableSublabel.textContent = 'Good luck in learning programming!'
+  tableSublabel.textContent = winTableSublabelText
 
   table.append(tableLabel, tableSublabel)
-  changeHeader('HOORAY!!!')
+  changeHeader(headerText)
 }
