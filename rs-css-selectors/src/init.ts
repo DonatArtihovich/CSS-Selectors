@@ -10,7 +10,8 @@ export default function initGame (): void {
 }
 
 function rebuildGame (): void {
-  const statusArr: number[] = JSON.parse(localStorage.getItem('progress') as string)
+  const statusObj = JSON.parse(localStorage.getItem('progress') as string)
+  const statusArr: number[] = statusObj.levelStatusArr
   statusArr.forEach((status, index) => {
     if (status !== 0) {
       const level: HTMLDivElement | null = document.querySelector(`.level-item[data-level="${index}"]`)
@@ -19,6 +20,6 @@ function rebuildGame (): void {
       level.classList.add(className)
     }
   })
-  const activeLevelIndex: number = statusArr.includes(0) ? statusArr.indexOf(0) : 9
+  const activeLevelIndex: number = statusObj.currentLevelIndex
   changeLevelIndex(activeLevelIndex)
 }

@@ -11,6 +11,7 @@ enum ViewerStartInners {
 }
 
 export function startLevel (): void {
+  saveProgress()
   isWithHelp = false
   const enterInput: HTMLInputElement | null = document.querySelector('.css-editor__input')
   if (enterInput === null) throw new Error('Unexpected null instead of input!')
@@ -175,7 +176,7 @@ function saveProgress (): void {
   )
 
   if (localStorage.getItem('progress') == null) localStorage.removeItem('progress')
-  localStorage.setItem('progress', JSON.stringify(levelStatusArr))
+  localStorage.setItem('progress', JSON.stringify({ levelStatusArr, currentLevelIndex }))
 }
 
 export function resetProgress (): void {
