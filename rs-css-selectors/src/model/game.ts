@@ -184,6 +184,7 @@ function addHighlightListeners (nodesArr: NodeListOf<HTMLElement>): void {
 
       highlightedElements.forEach((id: string) => {
         const hElem: HTMLElement | null = document.getElementById(id)
+
         if (hElem == null) {
           throw new Error('Unexpected null')
         }
@@ -202,6 +203,7 @@ function winLevel (): void {
   if (currentLevel == null) {
     throw new Error('Unexpected null against of current level!')
   }
+
   activeItems.forEach((item) => {
     item.classList.add('level-item_active-win')
   })
@@ -254,6 +256,7 @@ function saveProgress (): void {
   if (localStorage.getItem('progress') === undefined) {
     localStorage.removeItem('progress')
   }
+
   localStorage.setItem('progress', JSON.stringify({ levelStatusArr, currentLevelIndex }))
 }
 
@@ -276,6 +279,7 @@ export function resetProgress (): void {
 
 function finishGame (): void {
   const table: HTMLElement | null = document.querySelector('.table__wrapper')
+
   if (table == null) {
     throw new Error('Unexpected null instead of view section!')
   }
