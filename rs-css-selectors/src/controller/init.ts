@@ -1,5 +1,5 @@
-import { createLevelsArr } from './levels-data'
-import { startLevel, changeLevelIndex } from './game'
+import { createLevelsArr } from '../utils/init-levels'
+import { startLevel, changeLevelIndex } from '../model/game'
 import { addListeners } from './listeners'
 
 export default function initGame (): void {

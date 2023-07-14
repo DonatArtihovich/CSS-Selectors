@@ -1,5 +1,6 @@
-import { type ILevel } from './Types'
-import { Level } from './Class'
+import { type ILevel } from '../Types'
+
+export const levelsArr: ILevel[] = []
 
 export const levelDataArr: ILevel[] = [
   {
@@ -346,11 +347,3 @@ export const levelDataArr: ILevel[] = [
     header: 'Select all without "," !'
   }
 ]
-
-export const levelsArr: ILevel[] = []
-export function createLevelsArr (): void {
-  levelDataArr.forEach(data => {
-    const level: ILevel = new Level(data)
-    levelsArr.push(level)
-  })
-}

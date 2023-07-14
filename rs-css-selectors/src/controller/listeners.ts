@@ -1,4 +1,4 @@
-import { checkAnswer, writeSolution, changeLevelIndex, startLevel, resetProgress } from './game'
+import { checkAnswer, writeSolution, changeLevelIndex, startLevel, resetProgress } from '../model/game'
 
 export function addListeners (): void {
   addCheckAnswerListener()

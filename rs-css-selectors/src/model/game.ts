@@ -1,5 +1,5 @@
-import { levelsArr } from './levels-data'
-import { type ITitleObject, type ILevel } from './Types'
+import { levelsArr } from '../utils/const'
+import { type ITitleObject, type ILevel } from '../Types'
 
 export let currentLevelIndex: number = 0
 let writerId: NodeJS.Timeout
@@ -34,7 +34,7 @@ function renderLevel (level: ILevel): void {
     level.createItemElements === undefined) throw new Error('Unexpected undefined!')
   level.createItemElements()
 
-  level.itemElements?.forEach(item => {
+  level.itemElements?.forEach((item: HTMLElement) => {
     itemsWrapper.append(item)
   })
   table.append(itemsWrapper)

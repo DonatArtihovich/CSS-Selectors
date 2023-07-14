@@ -6,8 +6,8 @@ import './assets/img/orange.png'
 import './assets/img/watermelon.png'
 import './style.css'
 import './level.css'
-import addBurger from './burger'
-import initGame from './src/init'
+import addBurger from './src/view/burger'
+import initGame from './src/controller/init'
 
 addBurger()
 initGame()
