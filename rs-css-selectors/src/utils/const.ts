@@ -1,4 +1,10 @@
-import { type ILevel } from '../Types'
+import { type ILevel } from './Types'
+
+export const headerText = 'HOORAY!!!'
+
+export const winTableLabelText = 'You Won!'
+
+export const winTableSublabelText = 'Good luck in learning programming!'
 
 export const levelsArr: ILevel[] = []
 

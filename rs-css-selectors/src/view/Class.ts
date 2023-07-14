@@ -1,4 +1,4 @@
-import { type ILevel, type IItemObject, type ITitleObject } from '../Types'
+import { type ILevel, type IItemObject, type ITitleObject } from '../utils/Types'
 
 export class Level implements ILevel {
   public number: number
